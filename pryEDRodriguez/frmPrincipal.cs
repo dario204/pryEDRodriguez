@@ -28,5 +28,16 @@ namespace pryEDRodriguez
             frmCola Cola = new frmCola();
             Cola.ShowDialog();
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void pilaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPila Pila = new frmPila();
+            Pila.ShowDialog();
+        }
     }
 }

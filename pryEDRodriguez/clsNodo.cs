@@ -14,6 +14,8 @@ namespace pryEDRodriguez
         private String tra;
         private clsNodo sig;
         private clsNodo ant;
+        private clsNodo nue;
+        
 
         //Propiedades del Nodo
          public Int32 Codigo
@@ -47,6 +49,11 @@ namespace pryEDRodriguez
             set { ant = value; }
         }
 
+        public clsNodo Nuevo
+        {
+            get { return nue; }
+            set { nue = value; }
+        }
 
 
     }

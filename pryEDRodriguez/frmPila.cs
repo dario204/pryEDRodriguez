@@ -10,40 +10,33 @@ using System.Windows.Forms;
 
 namespace pryEDRodriguez
 {
-    public partial class frmCola : Form
+    public partial class frmPila : Form
     {
-        public frmCola()
+        public frmPila()
         {
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        clsCola FilaDePersonas= new clsCola();
-
+        clsPila FilaDePersonas = new clsPila();
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsNodo objNodo= new clsNodo();
-            objNodo.Codigo= Convert.ToInt32(txtCodigo.Text);
-            objNodo.Nombre=txtNombre.Text;
+            clsNodo objNodo = new clsNodo();
+            objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+            objNodo.Nombre = txtNombre.Text;
             objNodo.Tramite = txtTramite.Text;
-            
+
             FilaDePersonas.Agregar(objNodo);
-            FilaDePersonas.Recorrer(dgvGrilla);
-            FilaDePersonas.Recorrer(lstCola);
+            FilaDePersonas.Recorrer(dgvPila);
+            FilaDePersonas.Recorrer(lstPila);
             FilaDePersonas.Recorrer();
 
             txtCodigo.Text = "";
             txtNombre.Text = "";
             txtTramite.Text = "";
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -54,8 +47,8 @@ namespace pryEDRodriguez
                 lblNom.Text = FilaDePersonas.Primero.Nombre;
                 lblTra.Text = FilaDePersonas.Primero.Tramite;
                 FilaDePersonas.Eliminar();
-                FilaDePersonas.Recorrer(dgvGrilla);
-                FilaDePersonas.Recorrer(lstCola);
+                FilaDePersonas.Recorrer(dgvPila);
+                FilaDePersonas.Recorrer(lstPila);
                 FilaDePersonas.Recorrer();
             }
             else
@@ -64,11 +57,6 @@ namespace pryEDRodriguez
                 lblNom.Text = "";
                 lblTra.Text = "";
             }
-        }
-
-        private void frmCola_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
