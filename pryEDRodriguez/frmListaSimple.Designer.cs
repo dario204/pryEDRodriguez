@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.mcrEliminado = new System.Windows.Forms.GroupBox();
+            this.cboEliminar = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblCodigoE = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstLista = new System.Windows.Forms.ListBox();
-            this.cboEliminar = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mcrEliminado.SuspendLayout();
             this.mcrNuevo.SuspendLayout();
@@ -66,6 +66,16 @@
             this.mcrEliminado.TabIndex = 10;
             this.mcrEliminado.TabStop = false;
             this.mcrEliminado.Text = "Elemento Eliminado";
+            // 
+            // cboEliminar
+            // 
+            this.cboEliminar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEliminar.FormattingEnabled = true;
+            this.cboEliminar.Location = new System.Drawing.Point(71, 125);
+            this.cboEliminar.Name = "cboEliminar";
+            this.cboEliminar.Size = new System.Drawing.Size(125, 24);
+            this.cboEliminar.TabIndex = 8;
+            this.cboEliminar.SelectedIndexChanged += new System.EventHandler(this.cboEliminar_SelectedIndexChanged);
             // 
             // btnEliminar
             // 
@@ -105,7 +115,6 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Enabled = false;
             this.btnAgregar.Location = new System.Drawing.Point(10, 166);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(218, 42);
@@ -215,16 +224,6 @@
             this.lstLista.Name = "lstLista";
             this.lstLista.Size = new System.Drawing.Size(206, 186);
             this.lstLista.TabIndex = 0;
-            // 
-            // cboEliminar
-            // 
-            this.cboEliminar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEliminar.FormattingEnabled = true;
-            this.cboEliminar.Location = new System.Drawing.Point(71, 125);
-            this.cboEliminar.Name = "cboEliminar";
-            this.cboEliminar.Size = new System.Drawing.Size(125, 24);
-            this.cboEliminar.TabIndex = 8;
-            this.cboEliminar.SelectedIndexChanged += new System.EventHandler(this.cboEliminar_SelectedIndexChanged);
             // 
             // pictureBox1
             // 

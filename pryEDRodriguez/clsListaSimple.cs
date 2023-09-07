@@ -22,38 +22,40 @@ namespace pryEDRodriguez
         }
         public void Agregar(clsNodo Nuevo)
         {
-            if (Primero != null)
+
+            if (pri == null)
             {
-                Primero = Nuevo;
+                pri = Nuevo;
             }
             else
             {
-                if (Nuevo.Codigo<Primero.Codigo)
+                if (Nuevo.Codigo < pri.Codigo)
                 {
-                    Nuevo.Siguiente = Primero;
-                    Primero = Nuevo;
+                    Nuevo.Siguiente = pri;
+                    pri = Nuevo;
                 }
                 else
                 {
-                    clsNodo aux = Primero;
-                    clsNodo ant = Primero;
-                    while (Nuevo.Codigo>aux.Codigo)
+                    clsNodo aux = pri;
+                    clsNodo ant = pri;
+                    while (Nuevo.Codigo > aux.Codigo)
                     {
                         ant = aux;
                         aux = aux.Siguiente;
-                        if (aux==null)
+                        if (aux == null)
                         {
                             break;
                         }
                     }
                     ant.Siguiente = Nuevo;
-                    aux.Siguiente = aux;
+                    Nuevo.Siguiente = aux;
                 }
+
             }
         }
         public void Recorrer(DataGridView Grilla)
         {
-            clsNodo aux = Primero;
+            clsNodo aux = pri;
             Grilla.Rows.Clear();
             while (aux != null)
             {
@@ -63,7 +65,7 @@ namespace pryEDRodriguez
         }
         public void Recorrer(ListBox Lista)
         {
-            clsNodo aux = Primero;
+            clsNodo aux = pri;
             Lista.Items.Clear();
             while (aux != null)
             {
@@ -73,7 +75,7 @@ namespace pryEDRodriguez
         }
         public void Recorrer(ComboBox Combo)
         {
-            clsNodo aux = Primero;
+            clsNodo aux = pri;
             Combo.Items.Clear();
             while (aux != null)
             {
@@ -83,7 +85,7 @@ namespace pryEDRodriguez
         }
         public void Recorrer()
         {
-            clsNodo aux = Primero;
+            clsNodo aux = pri;
             StreamWriter AD = new StreamWriter("ListaSimple.csv", false, Encoding.UTF8);
             AD.WriteLine("Lista de Personas ordenado por codigo\n");
             AD.WriteLine("Codigo;Nombre;Tramite");
@@ -101,9 +103,9 @@ namespace pryEDRodriguez
         }
         public void Eliminar(Int32 Codigo)
         {
-            if (Primero.Codigo==Codigo)
+            if (pri.Codigo==Codigo)
             {
-                Primero = Primero.Siguiente;
+                pri = pri.Siguiente;
             }
             else
             {
