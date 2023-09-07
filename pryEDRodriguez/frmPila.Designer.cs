@@ -288,6 +288,7 @@
             this.Controls.Add(this.mcrNuevo);
             this.Name = "frmPila";
             this.Text = "frmPila";
+            this.Load += new System.EventHandler(this.frmPila_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPila)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.mcrEliminado.ResumeLayout(false);

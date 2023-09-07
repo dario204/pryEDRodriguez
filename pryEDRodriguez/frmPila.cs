@@ -58,5 +58,10 @@ namespace pryEDRodriguez
                 lblTra.Text = "";
             }
         }
+
+        private void frmPila_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

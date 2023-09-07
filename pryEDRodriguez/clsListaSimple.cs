@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace pryEDRodriguez
 {
-    internal class clsPila
+    internal class clsListaSimple
     {
-
         //Campos de la clase
         private clsNodo pri;
         private clsNodo ult;
@@ -21,7 +20,6 @@ namespace pryEDRodriguez
             get { return pri; }
             set { pri = value; }
         }
-
         public void Agregar(clsNodo Nuevo)
         {
             if (Primero != null)
@@ -30,19 +28,29 @@ namespace pryEDRodriguez
             }
             else
             {
-                Nuevo.Siguiente= Primero;
-                Primero = Nuevo;
+                if (Nuevo.Codigo<Primero.Codigo)
+                {
+                    Nuevo.Siguiente = Primero;
+                    Primero = Nuevo;
+                }
+                else
+                {
+                    clsNodo aux = Primero;
+                    clsNodo ant = Primero;
+                    while (Nuevo.Codigo>aux.Codigo)
+                    {
+                        ant = aux;
+                        aux = aux.Siguiente;
+                        if (aux==null)
+                        {
+                            break;
+                        }
+                    }
+                    ant.Siguiente = Nuevo;
+                    aux.Siguiente = aux;
+                }
             }
         }
-
-        public void Eliminar()
-        {
-            if (Primero!= null)
-            {
-                Primero = Primero.Siguiente;
-            }
-        }
-
         public void Recorrer(DataGridView Grilla)
         {
             clsNodo aux = Primero;
@@ -76,8 +84,8 @@ namespace pryEDRodriguez
         public void Recorrer()
         {
             clsNodo aux = Primero;
-            StreamWriter AD = new StreamWriter("Pila.csv", false, Encoding.UTF8);
-            AD.WriteLine("Lista de espera\n");
+            StreamWriter AD = new StreamWriter("ListaSimple.csv", false, Encoding.UTF8);
+            AD.WriteLine("Lista de Personas ordenado por codigo\n");
             AD.WriteLine("Codigo;Nombre;Tramite");
             while (aux != null)
             {
@@ -90,6 +98,28 @@ namespace pryEDRodriguez
             }
             AD.Close();
 
+        }
+        public void Eliminar(Int32 Codigo)
+        {
+            if (Primero.Codigo==Codigo)
+            {
+                Primero = Primero.Siguiente;
+            }
+            else
+            {
+                clsNodo aux = Primero;
+                clsNodo ant = Primero;
+                while (aux.Codigo!= Codigo)
+                {
+                    ant = aux;
+                    aux=aux.Siguiente;
+                    if (aux==null)
+                    {
+                        break;
+                    }
+                }
+                ant.Siguiente = aux.Siguiente;
+            }
         }
     }
 }

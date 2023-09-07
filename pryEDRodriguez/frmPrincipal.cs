@@ -39,5 +39,17 @@ namespace pryEDRodriguez
             frmPila Pila = new frmPila();
             Pila.ShowDialog();
         }
+
+        private void listaSimpleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListaSimple Lista = new frmListaSimple();
+            Lista.ShowDialog();
+        }
+
+        private void listaDobleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListaDoble Doble = new frmListaDoble();
+            Doble.ShowDialog();
+        }
     }
 }
