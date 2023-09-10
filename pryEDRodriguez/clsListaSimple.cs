@@ -10,34 +10,31 @@ namespace pryEDRodriguez
 {
     internal class clsListaSimple
     {
-        //Campos de la clase
         private clsNodo pri;
-        private clsNodo ult;
 
-        //Propiedades de la clase
         public clsNodo Primero
         {
             get { return pri; }
             set { pri = value; }
         }
+
         public void Agregar(clsNodo Nuevo)
         {
-
-            if (pri == null)
+            if (Primero == null)
             {
-                pri = Nuevo;
+                Primero = Nuevo;
             }
             else
             {
-                if (Nuevo.Codigo < pri.Codigo)
+                if (Nuevo.Codigo <= Primero.Codigo)
                 {
-                    Nuevo.Siguiente = pri;
-                    pri = Nuevo;
+                    Nuevo.Siguiente = Primero;
+                    Primero = Nuevo;
                 }
                 else
                 {
-                    clsNodo aux = pri;
-                    clsNodo ant = pri;
+                    clsNodo aux = Primero;
+                    clsNodo ant = Primero;
                     while (Nuevo.Codigo > aux.Codigo)
                     {
                         ant = aux;
@@ -50,12 +47,32 @@ namespace pryEDRodriguez
                     ant.Siguiente = Nuevo;
                     Nuevo.Siguiente = aux;
                 }
-
             }
         }
+
+        public void Eliminar(Int32 Codigo)
+        {
+            if (Primero.Codigo == Codigo)
+            {
+                Primero = Primero.Siguiente;
+            }
+            else
+            {
+                clsNodo aux = Primero;
+                clsNodo ant = Primero;
+                while (aux.Codigo != Codigo)
+                {
+                    ant = aux;
+                    aux = aux.Siguiente;
+                }
+                ant.Siguiente = aux.Siguiente;
+            }
+        }
+
+
         public void Recorrer(DataGridView Grilla)
         {
-            clsNodo aux = pri;
+            clsNodo aux = Primero;
             Grilla.Rows.Clear();
             while (aux != null)
             {
@@ -63,9 +80,10 @@ namespace pryEDRodriguez
                 aux = aux.Siguiente;
             }
         }
+
         public void Recorrer(ListBox Lista)
         {
-            clsNodo aux = pri;
+            clsNodo aux = Primero;
             Lista.Items.Clear();
             while (aux != null)
             {
@@ -73,55 +91,35 @@ namespace pryEDRodriguez
                 aux = aux.Siguiente;
             }
         }
-        public void Recorrer(ComboBox Combo)
+
+        public void Recorrer(ComboBox Lista)
         {
-            clsNodo aux = pri;
-            Combo.Items.Clear();
+            clsNodo aux = Primero;
+            Lista.Items.Clear();
             while (aux != null)
             {
-                Combo.Items.Add(aux.Nombre);
+                Lista.Items.Add(aux.Codigo);
                 aux = aux.Siguiente;
             }
         }
+
         public void Recorrer()
         {
-            clsNodo aux = pri;
+            clsNodo aux = Primero;
             StreamWriter AD = new StreamWriter("ListaSimple.csv", false, Encoding.UTF8);
-            AD.WriteLine("Lista de Personas ordenado por codigo\n");
-            AD.WriteLine("Codigo;Nombre;Tramite");
+            AD.WriteLine("Lista de personas\n");
+            AD.WriteLine("Codigo;Nombre;Tramite\n");
             while (aux != null)
             {
-                AD.Write(aux.Codigo);
-                AD.Write(";");
-                AD.Write(aux.Nombre);
-                AD.Write(";");
-                AD.WriteLine(aux.Tramite);
+                AD.WriteLine(aux.Codigo);
+                AD.WriteLine(";");
+                AD.WriteLine(aux.Nombre);
+                AD.WriteLine(";");
+                AD.Write(aux.Tramite);
                 aux = aux.Siguiente;
             }
             AD.Close();
-
         }
-        public void Eliminar(Int32 Codigo)
-        {
-            if (pri.Codigo==Codigo)
-            {
-                pri = pri.Siguiente;
-            }
-            else
-            {
-                clsNodo aux = Primero;
-                clsNodo ant = Primero;
-                while (aux.Codigo!= Codigo)
-                {
-                    ant = aux;
-                    aux=aux.Siguiente;
-                    if (aux==null)
-                    {
-                        break;
-                    }
-                }
-                ant.Siguiente = aux.Siguiente;
-            }
-        }
-    }
+    } 
 }
+

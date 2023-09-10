@@ -16,7 +16,7 @@ namespace pryEDRodriguez
         {
             InitializeComponent();
         }
-        clsListaSimple ListaPersonas = new clsListaSimple();
+        clsListaSimple FilaDePersonas = new clsListaSimple();
 
         private void frmListaSimple_Load(object sender, EventArgs e)
         {
@@ -25,27 +25,27 @@ namespace pryEDRodriguez
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (ListaPersonas.Primero != null)
+            if (FilaDePersonas.Primero != null)
             {
-                Int32 Codigo= Convert.ToInt32(cboEliminar.Text);
-                ListaPersonas.Eliminar(Codigo);
-                ListaPersonas.Recorrer(dgvLista);
-                ListaPersonas.Recorrer(lstLista);
-                ListaPersonas.Recorrer();
+                Int32 x = Convert.ToInt32(cboEliminar.Text);
+                FilaDePersonas.Eliminar(x);
+                FilaDePersonas.Recorrer(dgvLista);
+                FilaDePersonas.Recorrer(lstLista);
+                FilaDePersonas.Recorrer(cboEliminar);
+                FilaDePersonas.Recorrer();
             }
             else
             {
-                MessageBox.Show("Lista vacia");
+                MessageBox.Show("La lista está vacía");
             }
-            btnEliminar.Enabled= false;
+            btnEliminar.Enabled = false;
+
+
         }
 
         private void cboEliminar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboEliminar.Text !=null)
-            {
-
-            }
+            btnEliminar.Enabled = true;
         }
         public void ValidarDatos()
         {
@@ -81,15 +81,20 @@ namespace pryEDRodriguez
             objNodo.Nombre = txtNombre.Text;
             objNodo.Tramite = txtTramite.Text;
 
-            ListaPersonas.Agregar(objNodo);
-            ListaPersonas.Recorrer(dgvLista);
-            ListaPersonas.Recorrer(lstLista);
-            ListaPersonas.Recorrer();
-            ListaPersonas.Recorrer(cboEliminar);
+            FilaDePersonas.Agregar(objNodo);
+            FilaDePersonas.Recorrer(dgvLista);
+            FilaDePersonas.Recorrer(lstLista);
+            FilaDePersonas.Recorrer();
+            FilaDePersonas.Recorrer(cboEliminar);
 
             txtCodigo.Text = "";
             txtNombre.Text = "";
             txtTramite.Text = "";
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
