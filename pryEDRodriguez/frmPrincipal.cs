@@ -51,5 +51,10 @@ namespace pryEDRodriguez
             frmListaDoble Doble = new frmListaDoble();
             Doble.ShowDialog();
         }
+
+        private void estructurasLinealesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

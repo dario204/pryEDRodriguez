@@ -103,6 +103,7 @@
             this.estructurasLinealesToolStripMenuItem.Name = "estructurasLinealesToolStripMenuItem";
             this.estructurasLinealesToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.estructurasLinealesToolStripMenuItem.Text = "Estructuras Lineales";
+            this.estructurasLinealesToolStripMenuItem.Click += new System.EventHandler(this.estructurasLinealesToolStripMenuItem_Click);
             // 
             // colaToolStripMenuItem
             // 
@@ -148,7 +149,7 @@
             // arbolBinarioToolStripMenuItem
             // 
             this.arbolBinarioToolStripMenuItem.Name = "arbolBinarioToolStripMenuItem";
-            this.arbolBinarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arbolBinarioToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.arbolBinarioToolStripMenuItem.Text = "Arbol Binario";
             // 
             // baseDeDatosToolStripMenuItem
