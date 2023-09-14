@@ -47,8 +47,8 @@
             this.lblCodigoE = new System.Windows.Forms.Label();
             this.mcrEliminado = new System.Windows.Forms.GroupBox();
             this.mcrListaDoble = new System.Windows.Forms.GroupBox();
-            this.rbAscendente = new System.Windows.Forms.RadioButton();
             this.rbDescendente = new System.Windows.Forms.RadioButton();
+            this.rbAscendente = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -83,6 +83,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(125, 22);
             this.txtNombre.TabIndex = 5;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtCodigo
             // 
@@ -90,6 +91,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(91, 22);
             this.txtCodigo.TabIndex = 4;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // Codigo
             // 
@@ -102,6 +104,7 @@
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(125, 22);
             this.txtTramite.TabIndex = 6;
+            this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
             // 
             // dgvLista
             // 
@@ -135,6 +138,7 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // cboEliminar
             // 
@@ -144,6 +148,7 @@
             this.cboEliminar.Name = "cboEliminar";
             this.cboEliminar.Size = new System.Drawing.Size(125, 24);
             this.cboEliminar.TabIndex = 8;
+            this.cboEliminar.SelectedIndexChanged += new System.EventHandler(this.cboEliminar_SelectedIndexChanged);
             // 
             // mcrNuevo
             // 
@@ -200,6 +205,7 @@
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblCodigoE
             // 
@@ -235,17 +241,6 @@
             this.mcrListaDoble.TabStop = false;
             this.mcrListaDoble.Text = "Listar Datos";
             // 
-            // rbAscendente
-            // 
-            this.rbAscendente.AutoSize = true;
-            this.rbAscendente.Location = new System.Drawing.Point(6, 31);
-            this.rbAscendente.Name = "rbAscendente";
-            this.rbAscendente.Size = new System.Drawing.Size(82, 17);
-            this.rbAscendente.TabIndex = 0;
-            this.rbAscendente.TabStop = true;
-            this.rbAscendente.Text = "Ascendente";
-            this.rbAscendente.UseVisualStyleBackColor = true;
-            // 
             // rbDescendente
             // 
             this.rbDescendente.AutoSize = true;
@@ -256,6 +251,19 @@
             this.rbDescendente.TabStop = true;
             this.rbDescendente.Text = "Descendente";
             this.rbDescendente.UseVisualStyleBackColor = true;
+            this.rbDescendente.CheckedChanged += new System.EventHandler(this.rbDescendente_CheckedChanged);
+            // 
+            // rbAscendente
+            // 
+            this.rbAscendente.AutoSize = true;
+            this.rbAscendente.Location = new System.Drawing.Point(6, 31);
+            this.rbAscendente.Name = "rbAscendente";
+            this.rbAscendente.Size = new System.Drawing.Size(82, 17);
+            this.rbAscendente.TabIndex = 0;
+            this.rbAscendente.TabStop = true;
+            this.rbAscendente.Text = "Ascendente";
+            this.rbAscendente.UseVisualStyleBackColor = true;
+            this.rbAscendente.CheckedChanged += new System.EventHandler(this.rbAscendente_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -278,6 +286,7 @@
             this.Controls.Add(this.mcrEliminado);
             this.Name = "frmListaDoble";
             this.Text = "frmListaDoble";
+            this.Load += new System.EventHandler(this.frmListaDoble_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.mcrNuevo.ResumeLayout(false);

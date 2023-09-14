@@ -117,20 +117,69 @@ namespace pryEDRodriguez
         }
         public void Eliminar(Int32 Codigo)
         {
-            if (Primero.Codigo == Codigo)
+            if (Primero.Codigo== Codigo && Ultimo==Primero)
             {
-                Primero = Primero.Siguiente;
+                Primero = null;
+                Ultimo = null;
             }
             else
             {
-                clsNodo aux = Primero;
-                clsNodo ant = Primero;
-                while (aux.Codigo != Codigo)
+                if (Primero.Codigo==Codigo)
                 {
-                    ant = aux;
-                    aux = aux.Siguiente;
+                    Primero = Primero.Siguiente;
+                    Primero.Anterior = null;
                 }
-                ant.Siguiente = aux.Siguiente;
+                else
+                {
+                    if (Ultimo.Codigo==Codigo)
+                    {
+                        Ultimo = Ultimo.Anterior;
+                        Ultimo.Siguiente = null;
+                    }
+                    else
+                    {
+                        clsNodo aux = Primero;
+                        clsNodo ant = Primero;
+                        while (aux.Codigo < Codigo)
+                        {
+                            ant = aux;
+                            aux = aux.Anterior;
+                        }
+                        ant.Siguiente = aux.Siguiente;
+                            aux = aux.Siguiente;
+                        aux.Anterior = ant;
+                    }
+                }
+            }
+        }
+        public void RecorrerDes(ListBox Lista)
+        {
+            clsNodo aux = ult;
+            Lista.Items.Clear();
+            while (aux!= null)
+            {
+                Lista.Items.Add(aux.Codigo + " " + aux.Nombre + " " + aux.Tramite);
+                aux = aux.Anterior;
+            }
+        }
+        public void RecorrerDes(DataGridView Grilla)
+        {
+            clsNodo aux = Ultimo;
+            Grilla.Rows.Clear();
+            while (aux!= null)
+            {
+                Grilla.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
+                aux = aux.Anterior;
+            }
+        }
+        public void RecorrerDes(ComboBox Combo)
+        {
+            clsNodo aux = Ultimo;
+            Combo.Items.Clear();
+            while (aux != null)
+            {
+                Combo.Items.Add(aux.Nombre);
+                aux = aux.Anterior;
             }
         }
     }
