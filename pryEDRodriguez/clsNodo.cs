@@ -16,6 +16,7 @@ namespace pryEDRodriguez
         private clsNodo ant;
         private clsNodo nue;
         
+        
 
         //Propiedades del Nodo
          public Int32 Codigo
@@ -53,6 +54,17 @@ namespace pryEDRodriguez
         {
             get { return nue; }
             set { nue = value; }
+        }
+
+        public clsNodo Izquierda
+        {
+            get { return ant;}
+            set { ant = value; }
+        }
+        public clsNodo Derecha
+        {
+            get { return sig; }
+            set { sig = value; }
         }
 
 

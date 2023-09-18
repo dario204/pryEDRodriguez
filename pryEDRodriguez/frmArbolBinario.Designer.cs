@@ -30,26 +30,26 @@
         {
             this.tvArchivos = new System.Windows.Forms.TreeView();
             this.mcrElemento = new System.Windows.Forms.GroupBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtTramite = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblTramite = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
             this.mcrEliminar = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnEquilibrar = new System.Windows.Forms.Button();
             this.mcrListado = new System.Windows.Forms.GroupBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.lblTramite = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtTramite = new System.Windows.Forms.TextBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rbIn = new System.Windows.Forms.RadioButton();
-            this.rbPre = new System.Windows.Forms.RadioButton();
-            this.rbPost = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rbPost = new System.Windows.Forms.RadioButton();
+            this.rbPre = new System.Windows.Forms.RadioButton();
+            this.rbIn = new System.Windows.Forms.RadioButton();
             this.mcrElemento.SuspendLayout();
             this.mcrEliminar.SuspendLayout();
             this.mcrListado.SuspendLayout();
@@ -79,6 +79,68 @@
             this.mcrElemento.TabStop = false;
             this.mcrElemento.Text = "Nuevo Elemento";
             // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(112, 32);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(90, 20);
+            this.txtCodigo.TabIndex = 6;
+            // 
+            // txtTramite
+            // 
+            this.txtTramite.Location = new System.Drawing.Point(81, 120);
+            this.txtTramite.Name = "txtTramite";
+            this.txtTramite.Size = new System.Drawing.Size(121, 20);
+            this.txtTramite.TabIndex = 5;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(81, 76);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(121, 20);
+            this.txtNombre.TabIndex = 4;
+            // 
+            // lblTramite
+            // 
+            this.lblTramite.AutoSize = true;
+            this.lblTramite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTramite.Location = new System.Drawing.Point(4, 120);
+            this.lblTramite.Name = "lblTramite";
+            this.lblTramite.Size = new System.Drawing.Size(56, 16);
+            this.lblTramite.TabIndex = 3;
+            this.lblTramite.Text = "Trámite:";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(7, 154);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(195, 42);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(4, 76);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(59, 16);
+            this.lblNombre.TabIndex = 1;
+            this.lblNombre.Text = "Nombre:";
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(4, 38);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(54, 16);
+            this.lblCodigo.TabIndex = 0;
+            this.lblCodigo.Text = "Código:";
+            // 
             // mcrEliminar
             // 
             this.mcrEliminar.Controls.Add(this.label1);
@@ -90,6 +152,34 @@
             this.mcrEliminar.TabIndex = 2;
             this.mcrEliminar.TabStop = false;
             this.mcrEliminar.Text = "Elemento a Eliminar";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Código:";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(7, 76);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(187, 39);
+            this.btnEliminar.TabIndex = 1;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(89, 30);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(111, 21);
+            this.comboBox1.TabIndex = 0;
             // 
             // btnEquilibrar
             // 
@@ -113,131 +203,6 @@
             this.mcrListado.TabIndex = 4;
             this.mcrListado.TabStop = false;
             this.mcrListado.Text = "Listado de Árbol";
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(4, 38);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(54, 16);
-            this.lblCodigo.TabIndex = 0;
-            this.lblCodigo.Text = "Código:";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(4, 76);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(59, 16);
-            this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Nombre:";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(7, 154);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(195, 42);
-            this.btnAgregar.TabIndex = 2;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // lblTramite
-            // 
-            this.lblTramite.AutoSize = true;
-            this.lblTramite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTramite.Location = new System.Drawing.Point(4, 120);
-            this.lblTramite.Name = "lblTramite";
-            this.lblTramite.Size = new System.Drawing.Size(56, 16);
-            this.lblTramite.TabIndex = 3;
-            this.lblTramite.Text = "Trámite:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(81, 76);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(121, 20);
-            this.txtNombre.TabIndex = 4;
-            // 
-            // txtTramite
-            // 
-            this.txtTramite.Location = new System.Drawing.Point(81, 120);
-            this.txtTramite.Name = "txtTramite";
-            this.txtTramite.Size = new System.Drawing.Size(121, 20);
-            this.txtTramite.TabIndex = 5;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(112, 32);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(90, 20);
-            this.txtCodigo.TabIndex = 6;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(89, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(111, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(7, 76);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(187, 39);
-            this.btnEliminar.TabIndex = 1;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 16);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Código:";
-            // 
-            // rbIn
-            // 
-            this.rbIn.AutoSize = true;
-            this.rbIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbIn.Location = new System.Drawing.Point(46, 28);
-            this.rbIn.Name = "rbIn";
-            this.rbIn.Size = new System.Drawing.Size(73, 20);
-            this.rbIn.TabIndex = 0;
-            this.rbIn.TabStop = true;
-            this.rbIn.Text = "In-Order";
-            this.rbIn.UseVisualStyleBackColor = true;
-            // 
-            // rbPre
-            // 
-            this.rbPre.AutoSize = true;
-            this.rbPre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPre.Location = new System.Drawing.Point(46, 71);
-            this.rbPre.Name = "rbPre";
-            this.rbPre.Size = new System.Drawing.Size(87, 20);
-            this.rbPre.TabIndex = 1;
-            this.rbPre.TabStop = true;
-            this.rbPre.Text = "Pre-Orden";
-            this.rbPre.UseVisualStyleBackColor = true;
-            // 
-            // rbPost
-            // 
-            this.rbPost.AutoSize = true;
-            this.rbPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPost.Location = new System.Drawing.Point(46, 115);
-            this.rbPost.Name = "rbPost";
-            this.rbPost.Size = new System.Drawing.Size(93, 20);
-            this.rbPost.TabIndex = 2;
-            this.rbPost.TabStop = true;
-            this.rbPost.Text = "Post-Orden";
-            this.rbPost.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -266,6 +231,42 @@
             this.Tramite.HeaderText = "Tramite";
             this.Tramite.Name = "Tramite";
             // 
+            // rbPost
+            // 
+            this.rbPost.AutoSize = true;
+            this.rbPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPost.Location = new System.Drawing.Point(46, 115);
+            this.rbPost.Name = "rbPost";
+            this.rbPost.Size = new System.Drawing.Size(93, 20);
+            this.rbPost.TabIndex = 2;
+            this.rbPost.TabStop = true;
+            this.rbPost.Text = "Post-Orden";
+            this.rbPost.UseVisualStyleBackColor = true;
+            // 
+            // rbPre
+            // 
+            this.rbPre.AutoSize = true;
+            this.rbPre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPre.Location = new System.Drawing.Point(46, 71);
+            this.rbPre.Name = "rbPre";
+            this.rbPre.Size = new System.Drawing.Size(87, 20);
+            this.rbPre.TabIndex = 1;
+            this.rbPre.TabStop = true;
+            this.rbPre.Text = "Pre-Orden";
+            this.rbPre.UseVisualStyleBackColor = true;
+            // 
+            // rbIn
+            // 
+            this.rbIn.AutoSize = true;
+            this.rbIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbIn.Location = new System.Drawing.Point(46, 28);
+            this.rbIn.Name = "rbIn";
+            this.rbIn.Size = new System.Drawing.Size(73, 20);
+            this.rbIn.TabIndex = 0;
+            this.rbIn.TabStop = true;
+            this.rbIn.Text = "In-Order";
+            this.rbIn.UseVisualStyleBackColor = true;
+            // 
             // frmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,6 +279,7 @@
             this.Controls.Add(this.tvArchivos);
             this.Name = "frmArbolBinario";
             this.Text = "Estructuras Ramificadas - Arbol Binario";
+            this.Load += new System.EventHandler(this.frmArbolBinario_Load);
             this.mcrElemento.ResumeLayout(false);
             this.mcrElemento.PerformLayout();
             this.mcrEliminar.ResumeLayout(false);

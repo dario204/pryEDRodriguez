@@ -16,5 +16,16 @@ namespace pryEDRodriguez
         {
             InitializeComponent();
         }
+        clsArbolBinario Arbol = new clsArbolBinario();
+
+        private void frmArbolBinario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
