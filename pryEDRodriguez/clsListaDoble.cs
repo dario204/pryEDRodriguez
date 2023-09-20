@@ -182,5 +182,22 @@ namespace pryEDRodriguez
                 aux = aux.Anterior;
             }
         }
+        public void RecorrerDes()
+        {
+            clsNodo aux = Ultimo;
+            StreamWriter AD = new StreamWriter("ListaDobleDes.csv", false, Encoding.UTF8);
+            AD.WriteLine("Lista de personas\n");
+            AD.WriteLine("Codigo;Nombre;Tramite\n");
+            while (aux != null)
+            {
+                AD.WriteLine(aux.Codigo);
+                AD.WriteLine(";");
+                AD.WriteLine(aux.Nombre);
+                AD.WriteLine(";");
+                AD.Write(aux.Tramite);
+                aux = aux.Anterior;
+            }
+            AD.Close();
+        }
     }
 }

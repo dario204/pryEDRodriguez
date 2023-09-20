@@ -16,7 +16,7 @@ namespace pryEDRodriguez
         {
             InitializeComponent();
         }
-        clsListaDoble Doble = new clsListaDoble();
+        clsListaDoble FilaDePersonas = new clsListaDoble();
         private void frmListaDoble_Load(object sender, EventArgs e)
         {
 
@@ -24,14 +24,15 @@ namespace pryEDRodriguez
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (Doble.Primero != null)
+
+            if (FilaDePersonas.Primero != null)
             {
                 Int32 x = Convert.ToInt32(cboEliminar.Text);
-                Doble.Eliminar(x);
-                Doble.Recorrer(dgvLista);
-                Doble.Recorrer(lstLista);
-                Doble.Recorrer(cboEliminar);
-                Doble.Recorrer();
+                FilaDePersonas.Eliminar(x);
+                FilaDePersonas.Recorrer(dgvLista);
+                FilaDePersonas.Recorrer(lstLista);
+                FilaDePersonas.Recorrer(cboEliminar);
+                FilaDePersonas.Recorrer();
             }
             else
             {
@@ -42,7 +43,11 @@ namespace pryEDRodriguez
 
         private void cboEliminar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnEliminar.Enabled = true;
+
+            if (cboEliminar.SelectedIndex != -1)
+            {
+                btnEliminar.Enabled = true;
+            }
         }
         public void ValidarDatos()
         {
@@ -74,44 +79,38 @@ namespace pryEDRodriguez
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            clsNodo objNodo = new clsNodo();
-            objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
-            objNodo.Nombre = txtNombre.Text;
-            objNodo.Tramite = txtTramite.Text;
-
-            Doble.Agregar(objNodo);
-            Doble.Recorrer(dgvLista);
-            Doble.Recorrer(lstLista);
-            Doble.Recorrer();
-            Doble.Recorrer(cboEliminar);
-            Doble.RecorrerDes(dgvLista);
-            Doble.RecorrerDes(lstLista);
-            Doble.RecorrerDes(cboEliminar);
-
+            clsNodo ObjNodo = new clsNodo();
+            ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+            ObjNodo.Nombre = txtNombre.Text;
+            ObjNodo.Tramite = txtTramite.Text;
+            FilaDePersonas.Agregar(ObjNodo);
+            FilaDePersonas.Recorrer(dgvLista);
+            FilaDePersonas.Recorrer(lstLista);
+            FilaDePersonas.Recorrer();
+            FilaDePersonas.Recorrer(cboEliminar);
             txtCodigo.Text = "";
             txtNombre.Text = "";
             txtTramite.Text = "";
+            btnAgregar.Enabled = false;
         }
-
         private void rbAscendente_CheckedChanged(object sender, EventArgs e)
         {
             if (rbAscendente.Checked)
             {
-                Doble.Recorrer(dgvLista);
-                Doble.Recorrer(lstLista);
-                Doble.Recorrer();
-                Doble.Recorrer(cboEliminar);
+                FilaDePersonas.Recorrer(dgvLista);
+                FilaDePersonas.Recorrer(lstLista);
+                FilaDePersonas.Recorrer();
             }
-           
-        }
+
+        } 
 
         private void rbDescendente_CheckedChanged(object sender, EventArgs e)
         {
             if (rbDescendente.Checked)
             {
-                Doble.RecorrerDes(dgvLista);
-                Doble.RecorrerDes(lstLista);
-                Doble.RecorrerDes(cboEliminar);
+                FilaDePersonas.RecorrerDes(dgvLista);
+                FilaDePersonas.RecorrerDes(lstLista);
+                FilaDePersonas.RecorrerDes();
             }
         }
     }

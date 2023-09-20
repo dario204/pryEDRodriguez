@@ -10,6 +10,7 @@ namespace pryEDRodriguez
     internal class clsArbolBinario
     {
         private clsNodo Inicio;
+
         public clsNodo Raiz
         {
             get { return Inicio; } set { Inicio = value; }
@@ -61,5 +62,6 @@ namespace pryEDRodriguez
             InOrderAsc(Grilla, Raiz);
         }
 
+        
     }
 }
