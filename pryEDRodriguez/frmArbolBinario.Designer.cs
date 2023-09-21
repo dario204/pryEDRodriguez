@@ -43,17 +43,18 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnEquilibrar = new System.Windows.Forms.Button();
             this.mcrListado = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvLista = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rbPost = new System.Windows.Forms.RadioButton();
             this.rbPre = new System.Windows.Forms.RadioButton();
             this.rbIn = new System.Windows.Forms.RadioButton();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.mcrElemento.SuspendLayout();
             this.mcrEliminar.SuspendLayout();
             this.mcrListado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
             // tvArchivos
@@ -84,21 +85,21 @@
             this.txtCodigo.Location = new System.Drawing.Point(112, 32);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(90, 20);
-            this.txtCodigo.TabIndex = 6;
+            this.txtCodigo.TabIndex = 0;
             // 
             // txtTramite
             // 
             this.txtTramite.Location = new System.Drawing.Point(81, 120);
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(121, 20);
-            this.txtTramite.TabIndex = 5;
+            this.txtTramite.TabIndex = 2;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(81, 76);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 20);
-            this.txtNombre.TabIndex = 4;
+            this.txtNombre.TabIndex = 1;
             // 
             // lblTramite
             // 
@@ -116,7 +117,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(7, 154);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(195, 42);
-            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -175,6 +176,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(89, 30);
             this.comboBox1.Name = "comboBox1";
@@ -193,7 +195,8 @@
             // 
             // mcrListado
             // 
-            this.mcrListado.Controls.Add(this.dataGridView1);
+            this.mcrListado.Controls.Add(this.btnExportar);
+            this.mcrListado.Controls.Add(this.dgvLista);
             this.mcrListado.Controls.Add(this.rbPost);
             this.mcrListado.Controls.Add(this.rbPre);
             this.mcrListado.Controls.Add(this.rbIn);
@@ -204,17 +207,17 @@
             this.mcrListado.TabStop = false;
             this.mcrListado.Text = "Listado de Árbol";
             // 
-            // dataGridView1
+            // dgvLista
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Nombre,
             this.Tramite});
-            this.dataGridView1.Location = new System.Drawing.Point(230, 28);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(421, 125);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvLista.Location = new System.Drawing.Point(230, 28);
+            this.dgvLista.Name = "dgvLista";
+            this.dgvLista.Size = new System.Drawing.Size(421, 146);
+            this.dgvLista.TabIndex = 1;
             // 
             // Codigo
             // 
@@ -235,25 +238,27 @@
             // 
             this.rbPost.AutoSize = true;
             this.rbPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPost.Location = new System.Drawing.Point(46, 115);
+            this.rbPost.Location = new System.Drawing.Point(46, 99);
             this.rbPost.Name = "rbPost";
             this.rbPost.Size = new System.Drawing.Size(93, 20);
             this.rbPost.TabIndex = 2;
             this.rbPost.TabStop = true;
             this.rbPost.Text = "Post-Orden";
             this.rbPost.UseVisualStyleBackColor = true;
+            this.rbPost.CheckedChanged += new System.EventHandler(this.rbPost_CheckedChanged);
             // 
             // rbPre
             // 
             this.rbPre.AutoSize = true;
             this.rbPre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPre.Location = new System.Drawing.Point(46, 71);
+            this.rbPre.Location = new System.Drawing.Point(46, 63);
             this.rbPre.Name = "rbPre";
             this.rbPre.Size = new System.Drawing.Size(87, 20);
             this.rbPre.TabIndex = 1;
             this.rbPre.TabStop = true;
             this.rbPre.Text = "Pre-Orden";
             this.rbPre.UseVisualStyleBackColor = true;
+            this.rbPre.CheckedChanged += new System.EventHandler(this.rbPre_CheckedChanged);
             // 
             // rbIn
             // 
@@ -266,12 +271,24 @@
             this.rbIn.TabStop = true;
             this.rbIn.Text = "In-Order";
             this.rbIn.UseVisualStyleBackColor = true;
+            this.rbIn.CheckedChanged += new System.EventHandler(this.rbIn_CheckedChanged);
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.Location = new System.Drawing.Point(30, 132);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(129, 42);
+            this.btnExportar.TabIndex = 5;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // frmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 418);
+            this.ClientSize = new System.Drawing.Size(741, 475);
             this.Controls.Add(this.mcrListado);
             this.Controls.Add(this.btnEquilibrar);
             this.Controls.Add(this.mcrEliminar);
@@ -286,7 +303,7 @@
             this.mcrEliminar.PerformLayout();
             this.mcrListado.ResumeLayout(false);
             this.mcrListado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,12 +325,13 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnEquilibrar;
         private System.Windows.Forms.GroupBox mcrListado;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tramite;
         private System.Windows.Forms.RadioButton rbPost;
         private System.Windows.Forms.RadioButton rbPre;
         private System.Windows.Forms.RadioButton rbIn;
+        private System.Windows.Forms.Button btnExportar;
     }
 }

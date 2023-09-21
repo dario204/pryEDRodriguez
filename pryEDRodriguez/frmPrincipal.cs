@@ -56,5 +56,11 @@ namespace pryEDRodriguez
         {
 
         }
+
+        private void arbolBinarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArbolBinario Binario = new frmArbolBinario();
+            Binario.ShowDialog();
+        }
     }
 }
