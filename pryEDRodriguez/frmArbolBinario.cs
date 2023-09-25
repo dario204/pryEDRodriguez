@@ -31,6 +31,7 @@ namespace pryEDRodriguez
             ObjNodo.Tramite = txtTramite.Text;
             Arbol.Agregar(ObjNodo);
             Arbol.RecorrerIn(dgvLista);
+            Arbol.Recorrer(tvArchivos);
         }
 
         private void rbIn_CheckedChanged(object sender, EventArgs e)
@@ -60,6 +61,12 @@ namespace pryEDRodriguez
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
+            Arbol.Exportar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
