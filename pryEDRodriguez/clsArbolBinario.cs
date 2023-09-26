@@ -183,5 +183,81 @@ namespace pryEDRodriguez
                 PreOrden(R.Derecha, NodoPadre);
             }
         }
+        public void ExportarIn(DataGridView Grilla)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter("ArbolInOrden.csv", false, Encoding.UTF8))
+                {
+                    foreach (DataGridViewRow row in Grilla.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            // Escribe el valor de la celda en el archivo de texto
+                            writer.Write(cell.Value.ToString() + "\t");
+                        }
+                        writer.WriteLine(); // Salta a la siguiente línea
+                    }
+                }
+                MessageBox.Show("Datos guardados correctamente.");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+
+        }
+
+        public void ExportarPre(DataGridView Grilla)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter("ArbolPreOrden.csv", false, Encoding.UTF8))
+                {
+                    foreach (DataGridViewRow row in Grilla.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            // Escribe el valor de la celda en el archivo de texto
+                            writer.Write(cell.Value.ToString() + "\t");
+                        }
+                        writer.WriteLine(); // Salta a la siguiente línea
+                    }
+                }
+                MessageBox.Show("Datos guardados correctamente.");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+        }
+
+        public void ExportarPost(DataGridView Grilla)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter("ArbolPostOrden.csv", false, Encoding.UTF8))
+                {
+                    foreach (DataGridViewRow row in Grilla.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            // Escribe el valor de la celda en el archivo de texto
+                            writer.Write(cell.Value.ToString() + "\t");
+                        }
+                        writer.WriteLine(); // Salta a la siguiente línea
+                    }
+                }
+                MessageBox.Show("Datos guardados correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+        }
     }
 }

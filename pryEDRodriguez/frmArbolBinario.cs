@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace pryEDRodriguez
 {
@@ -39,7 +40,7 @@ namespace pryEDRodriguez
             if (rbIn.Checked)
             {
                 Arbol.RecorrerIn(dgvLista);
-               
+
             }
         }
 
@@ -61,12 +62,30 @@ namespace pryEDRodriguez
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            Arbol.Exportar();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
+            if (rbIn.Checked)
+            {
+                Arbol.ExportarIn(dgvLista);
+            }
+            else
+            {
+                if (rbPre.Checked)
+                {
+                    Arbol.ExportarPre(dgvLista);
+                }
+                else
+                {
+                    if (rbPost.Checked)
+                    {
+                        Arbol.ExportarPost(dgvLista);
+                    }
+                }
+            }
             
         }
-    }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+    } 
 }
+

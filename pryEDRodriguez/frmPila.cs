@@ -24,12 +24,11 @@ namespace pryEDRodriguez
         clsPila FilaDePersonas = new clsPila();
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsNodo objNodo = new clsNodo();
-            objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
-            objNodo.Nombre = txtNombre.Text;
-            objNodo.Tramite = txtTramite.Text;
-
-            FilaDePersonas.Agregar(objNodo);
+            clsNodo ObjNodo = new clsNodo();
+            ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+            ObjNodo.Nombre = txtNombre.Text;
+            ObjNodo.Tramite = txtTramite.Text;
+            FilaDePersonas.Agregar(ObjNodo);
             FilaDePersonas.Recorrer(dgvPila);
             FilaDePersonas.Recorrer(lstPila);
             FilaDePersonas.Recorrer();
@@ -62,6 +61,16 @@ namespace pryEDRodriguez
         private void frmPila_Load(object sender, EventArgs e)
         {
 
+        }
+        
+
+        private void txtTramite_TextChanged_1(object sender, EventArgs e)
+        {
+
+            if (txtCodigo.Text != null && txtNombre.Text != null && txtTramite.Text != null)
+            {
+                btnAgregar.Enabled = true;
+            }
         }
     }
 }

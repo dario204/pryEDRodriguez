@@ -70,5 +70,13 @@ namespace pryEDRodriguez
         {
 
         }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text != null && txtNombre.Text != null && txtTramite.Text != null)
+            {
+                btnAgregar.Enabled = true;
+            }
+        }
     }
 }

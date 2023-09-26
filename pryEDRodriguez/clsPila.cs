@@ -13,7 +13,6 @@ namespace pryEDRodriguez
 
         //Campos de la clase
         private clsNodo pri;
-        private clsNodo ult;
 
         //Propiedades de la clase
         public clsNodo Primero
@@ -26,13 +25,9 @@ namespace pryEDRodriguez
         {
             if (Primero != null)
             {
-                Primero = Nuevo;
+                Nuevo.Siguiente = Primero;
             }
-            else
-            {
-                Nuevo.Siguiente= Primero;
-                Primero = Nuevo;
-            }
+            Primero = Nuevo;
         }
 
         public void Eliminar()
@@ -41,6 +36,7 @@ namespace pryEDRodriguez
             {
                 Primero = Primero.Siguiente;
             }
+            
         }
 
         public void Recorrer(DataGridView Grilla)
