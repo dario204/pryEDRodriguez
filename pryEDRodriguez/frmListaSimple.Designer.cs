@@ -276,7 +276,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmListaSimple";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmListaSimple";
+            this.Text = "Estructura de Datos Lineal - Lista Simple";
             this.Load += new System.EventHandler(this.frmListaSimple_Load);
             this.mcrEliminado.ResumeLayout(false);
             this.mcrEliminado.PerformLayout();

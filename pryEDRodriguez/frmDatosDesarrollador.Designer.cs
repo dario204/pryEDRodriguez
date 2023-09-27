@@ -110,10 +110,10 @@
             this.Controls.Add(this.lblMateria);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblDni);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDatosDesarrollador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDatosDesarrollador";
+            this.Text = "Datos del Desarrollador";
             this.ResumeLayout(false);
             this.PerformLayout();
 

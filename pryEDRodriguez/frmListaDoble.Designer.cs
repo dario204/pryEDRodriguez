@@ -318,7 +318,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmListaDoble";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmListaDoble";
+            this.Text = "Estructura de Datos Lineal - Lista Doble";
             this.Load += new System.EventHandler(this.frmListaDoble_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.mcrListado.ResumeLayout(false);
