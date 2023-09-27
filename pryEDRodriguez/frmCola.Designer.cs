@@ -44,7 +44,7 @@
             this.TrámiteE = new System.Windows.Forms.Label();
             this.NombreE = new System.Windows.Forms.Label();
             this.lblCodigoE = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mcrListado = new System.Windows.Forms.GroupBox();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +53,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mcrNuevo.SuspendLayout();
             this.mcrEliminado.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.mcrListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -69,9 +69,9 @@
             this.mcrNuevo.Controls.Add(this.lblCodigo);
             this.mcrNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mcrNuevo.Location = new System.Drawing.Point(359, 28);
-            this.mcrNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mcrNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.mcrNuevo.Name = "mcrNuevo";
-            this.mcrNuevo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mcrNuevo.Padding = new System.Windows.Forms.Padding(4);
             this.mcrNuevo.Size = new System.Drawing.Size(312, 262);
             this.mcrNuevo.TabIndex = 1;
             this.mcrNuevo.TabStop = false;
@@ -80,7 +80,7 @@
             // txtTramite
             // 
             this.txtTramite.Location = new System.Drawing.Point(137, 154);
-            this.txtTramite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTramite.Margin = new System.Windows.Forms.Padding(4);
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(165, 26);
             this.txtTramite.TabIndex = 3;
@@ -89,7 +89,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(137, 100);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(165, 26);
             this.txtNombre.TabIndex = 2;
@@ -97,15 +97,16 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(183, 48);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(120, 26);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(13, 204);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(291, 52);
             this.btnAgregar.TabIndex = 4;
@@ -157,9 +158,9 @@
             this.mcrEliminado.Controls.Add(this.lblCodigoE);
             this.mcrEliminado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mcrEliminado.Location = new System.Drawing.Point(729, 28);
-            this.mcrEliminado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mcrEliminado.Margin = new System.Windows.Forms.Padding(4);
             this.mcrEliminado.Name = "mcrEliminado";
-            this.mcrEliminado.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mcrEliminado.Padding = new System.Windows.Forms.Padding(4);
             this.mcrEliminado.Size = new System.Drawing.Size(308, 262);
             this.mcrEliminado.TabIndex = 2;
             this.mcrEliminado.TabStop = false;
@@ -199,7 +200,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(8, 203);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(291, 52);
             this.btnEliminar.TabIndex = 0;
@@ -240,18 +241,18 @@
             this.lblCodigoE.TabIndex = 0;
             this.lblCodigoE.Text = "Código:";
             // 
-            // groupBox1
+            // mcrListado
             // 
-            this.groupBox1.Controls.Add(this.dgvGrilla);
-            this.groupBox1.Controls.Add(this.lstCola);
-            this.groupBox1.Location = new System.Drawing.Point(16, 350);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1021, 311);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Listado en una Lista y una Grilla";
+            this.mcrListado.Controls.Add(this.dgvGrilla);
+            this.mcrListado.Controls.Add(this.lstCola);
+            this.mcrListado.Location = new System.Drawing.Point(16, 350);
+            this.mcrListado.Margin = new System.Windows.Forms.Padding(4);
+            this.mcrListado.Name = "mcrListado";
+            this.mcrListado.Padding = new System.Windows.Forms.Padding(4);
+            this.mcrListado.Size = new System.Drawing.Size(1021, 311);
+            this.mcrListado.TabIndex = 3;
+            this.mcrListado.TabStop = false;
+            this.mcrListado.Text = "Listado en una Lista y una Grilla";
             // 
             // dgvGrilla
             // 
@@ -261,7 +262,7 @@
             this.Nombre,
             this.Tramite});
             this.dgvGrilla.Location = new System.Drawing.Point(356, 52);
-            this.dgvGrilla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvGrilla.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.RowHeadersWidth = 51;
             this.dgvGrilla.Size = new System.Drawing.Size(635, 219);
@@ -294,16 +295,17 @@
             this.lstCola.FormattingEnabled = true;
             this.lstCola.ItemHeight = 16;
             this.lstCola.Location = new System.Drawing.Point(9, 52);
-            this.lstCola.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstCola.Margin = new System.Windows.Forms.Padding(4);
             this.lstCola.Name = "lstCola";
             this.lstCola.Size = new System.Drawing.Size(273, 228);
             this.lstCola.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::pryEDRodriguez.Properties.Resources.cola;
+            this.pictureBox1.BackgroundImage = global::pryEDRodriguez.Properties.Resources.cola;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(296, 276);
             this.pictureBox1.TabIndex = 0;
@@ -314,11 +316,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 676);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.mcrListado);
             this.Controls.Add(this.mcrEliminado);
             this.Controls.Add(this.mcrNuevo);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCola";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinámica no Lineal - Cola";
@@ -327,7 +329,7 @@
             this.mcrNuevo.PerformLayout();
             this.mcrEliminado.ResumeLayout(false);
             this.mcrEliminado.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.mcrListado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -353,7 +355,7 @@
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblCod;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox mcrListado;
         private System.Windows.Forms.DataGridView dgvGrilla;
         private System.Windows.Forms.ListBox lstCola;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;

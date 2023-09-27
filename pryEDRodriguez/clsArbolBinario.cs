@@ -17,7 +17,18 @@ namespace pryEDRodriguez
             get { return Inicio; }
             set { Inicio = value; }
         }
+        public clsNodo BuscarCodigo(Int32 Cod)
+        {
+            clsNodo Aux = Raiz;
+            while (Aux != null)
+            {
+                if (Cod == Aux.Codigo) break;
+                if (Cod < Aux.Codigo) Aux = Aux.Izquierda;
+                else Aux = Aux.Derecha;
 
+            }
+            return Aux;
+        }
         public void Agregar(clsNodo nvo)
         {
             nvo.Izquierda = null;
@@ -88,23 +99,7 @@ namespace pryEDRodriguez
             PostOrderAsc(Grilla, Raiz);
         }
 
-        public void Exportar()
-        {
-            clsNodo aux = Raiz;
-            StreamWriter AD = new StreamWriter("ListaSimple.csv", false, Encoding.UTF8);
-            AD.WriteLine("Lista de personas\n");
-            AD.WriteLine("Codigo;Nombre;Tramite\n");
-            while (aux != null)
-            {
-                AD.WriteLine(aux.Codigo);
-                AD.WriteLine(";");
-                AD.WriteLine(aux.Nombre);
-                AD.WriteLine(";");
-                AD.Write(aux.Tramite);
-                aux = aux.Siguiente;
-            }
-            AD.Close();
-        }
+        
         private clsNodo[] Vector = new clsNodo[100];
         private Int32 i = 0;
         public void Equilibrar()
@@ -183,18 +178,36 @@ namespace pryEDRodriguez
                 PreOrden(R.Derecha, NodoPadre);
             }
         }
+        
+        public void Recorrer(ComboBox Lista)
+        {
+            Lista.Items.Clear();
+            InOrdenAsc(Lista, Raiz);
+        }
+        private void InOrdenAsc(ComboBox Lis, clsNodo R)
+        {
+            if (R.Izquierda != null)
+            {
+                InOrdenAsc(Lis, R.Izquierda);
+            }
+            Lis.Items.Add(R.Codigo);
+            if (R.Derecha != null)
+            {
+                InOrdenAsc(Lis, R.Derecha);
+            }
+        }
         public void ExportarIn(DataGridView Grilla)
         {
             try
             {
-                using (StreamWriter writer = new StreamWriter("ArbolInOrden.csv", false, Encoding.UTF8))
+                using (StreamWriter writer = new StreamWriter("arbolInOrden.txt", false))
                 {
                     foreach (DataGridViewRow row in Grilla.Rows)
                     {
                         foreach (DataGridViewCell cell in row.Cells)
                         {
                             // Escribe el valor de la celda en el archivo de texto
-                            writer.Write(cell.Value.ToString() + "\t");
+                            writer.Write(cell.Value + "\t");
                         }
                         writer.WriteLine(); // Salta a la siguiente línea
                     }
@@ -204,7 +217,7 @@ namespace pryEDRodriguez
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error al guardar los datos: " + ex.Message);
             }
 
         }
@@ -213,24 +226,24 @@ namespace pryEDRodriguez
         {
             try
             {
-                using (StreamWriter writer = new StreamWriter("ArbolPreOrden.csv", false, Encoding.UTF8))
+                using (StreamWriter writer = new StreamWriter("arbolPreOrden.txt", false))
                 {
                     foreach (DataGridViewRow row in Grilla.Rows)
                     {
                         foreach (DataGridViewCell cell in row.Cells)
                         {
                             // Escribe el valor de la celda en el archivo de texto
-                            writer.Write(cell.Value.ToString() + "\t");
+                            writer.Write(cell.Value + "\t");
                         }
                         writer.WriteLine(); // Salta a la siguiente línea
                     }
                 }
-                MessageBox.Show("Datos guardados correctamente.");
+                MessageBox.Show("Datos guardadoscorrectamente.");
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error al guardar los datos: " + ex.Message);
             }
 
         }
@@ -239,23 +252,24 @@ namespace pryEDRodriguez
         {
             try
             {
-                using (StreamWriter writer = new StreamWriter("ArbolPostOrden.csv", false, Encoding.UTF8))
+                using (StreamWriter writer = new StreamWriter("arbolPostOrden.txt", false))
                 {
                     foreach (DataGridViewRow row in Grilla.Rows)
                     {
                         foreach (DataGridViewCell cell in row.Cells)
                         {
                             // Escribe el valor de la celda en el archivo de texto
-                            writer.Write(cell.Value.ToString() + "\t");
+                            writer.Write(cell.Value + "\t");
                         }
                         writer.WriteLine(); // Salta a la siguiente línea
                     }
                 }
                 MessageBox.Show("Datos guardados correctamente.");
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error al guardar los datos: " + ex.Message);
             }
 
         }

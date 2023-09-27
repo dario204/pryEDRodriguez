@@ -117,21 +117,21 @@ namespace pryEDRodriguez
         }
         public void Eliminar(Int32 Codigo)
         {
-            if (Primero.Codigo== Codigo && Ultimo==Primero)
+            if (Primero.Codigo == Codigo && Ultimo == Primero)
             {
                 Primero = null;
                 Ultimo = null;
             }
             else
             {
-                if (Primero.Codigo==Codigo)
+                if (Primero.Codigo == Codigo)
                 {
                     Primero = Primero.Siguiente;
                     Primero.Anterior = null;
                 }
                 else
                 {
-                    if (Ultimo.Codigo==Codigo)
+                    if (Ultimo.Codigo == Codigo)
                     {
                         Ultimo = Ultimo.Anterior;
                         Ultimo.Siguiente = null;
@@ -143,14 +143,16 @@ namespace pryEDRodriguez
                         while (aux.Codigo < Codigo)
                         {
                             ant = aux;
-                            aux = aux.Anterior;
+                            aux = aux.Siguiente;
                         }
                         ant.Siguiente = aux.Siguiente;
-                            aux = aux.Siguiente;
+                        aux = aux.Siguiente;
                         aux.Anterior = ant;
                     }
                 }
             }
+
+
         }
         public void RecorrerDes(ListBox Lista)
         {
