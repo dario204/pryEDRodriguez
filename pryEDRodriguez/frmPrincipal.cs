@@ -65,7 +65,14 @@ namespace pryEDRodriguez
 
         private void operacionesConTablasDeBasesDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmOperacionesBD Operaciones = new frmOperacionesBD();
+            Operaciones.ShowDialog();
+        }
 
+        private void consultasEnLaBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaBD Consulta = new frmConsultaBD();
+            Consulta.ShowDialog();
         }
     }
 }

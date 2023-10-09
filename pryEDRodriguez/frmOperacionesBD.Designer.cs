@@ -1,6 +1,6 @@
 ﻿namespace pryEDRodriguez
 {
-    partial class frmBaseDatos
+    partial class frmOperacionesBD
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,9 @@
         {
             this.dgvBaseDatos = new System.Windows.Forms.DataGridView();
             this.mcrSelect = new System.Windows.Forms.GroupBox();
-            this.btnJuntar = new System.Windows.Forms.Button();
-            this.btnProyeccionSimple = new System.Windows.Forms.Button();
             this.btnProyeccionMultiatributo = new System.Windows.Forms.Button();
+            this.btnProyeccionSimple = new System.Windows.Forms.Button();
+            this.btnJuntar = new System.Windows.Forms.Button();
             this.mcrWhere = new System.Windows.Forms.GroupBox();
             this.btnSeleccionMultiatributo = new System.Windows.Forms.Button();
             this.btnSeleccionSimple = new System.Windows.Forms.Button();
@@ -67,14 +67,14 @@
             this.mcrSelect.TabStop = false;
             this.mcrSelect.Text = "Operaciones de Proyección - SELECT";
             // 
-            // btnJuntar
+            // btnProyeccionMultiatributo
             // 
-            this.btnJuntar.Location = new System.Drawing.Point(7, 113);
-            this.btnJuntar.Name = "btnJuntar";
-            this.btnJuntar.Size = new System.Drawing.Size(283, 29);
-            this.btnJuntar.TabIndex = 2;
-            this.btnJuntar.Text = "Juntar";
-            this.btnJuntar.UseVisualStyleBackColor = true;
+            this.btnProyeccionMultiatributo.Location = new System.Drawing.Point(7, 65);
+            this.btnProyeccionMultiatributo.Name = "btnProyeccionMultiatributo";
+            this.btnProyeccionMultiatributo.Size = new System.Drawing.Size(283, 29);
+            this.btnProyeccionMultiatributo.TabIndex = 4;
+            this.btnProyeccionMultiatributo.Text = "Proyeccion Multiatributo";
+            this.btnProyeccionMultiatributo.UseVisualStyleBackColor = true;
             // 
             // btnProyeccionSimple
             // 
@@ -84,15 +84,16 @@
             this.btnProyeccionSimple.TabIndex = 3;
             this.btnProyeccionSimple.Text = "Proyeccion Simple";
             this.btnProyeccionSimple.UseVisualStyleBackColor = true;
+            this.btnProyeccionSimple.Click += new System.EventHandler(this.btnProyeccionSimple_Click);
             // 
-            // btnProyeccionMultiatributo
+            // btnJuntar
             // 
-            this.btnProyeccionMultiatributo.Location = new System.Drawing.Point(7, 65);
-            this.btnProyeccionMultiatributo.Name = "btnProyeccionMultiatributo";
-            this.btnProyeccionMultiatributo.Size = new System.Drawing.Size(283, 29);
-            this.btnProyeccionMultiatributo.TabIndex = 4;
-            this.btnProyeccionMultiatributo.Text = "Proyeccion Multiatributo";
-            this.btnProyeccionMultiatributo.UseVisualStyleBackColor = true;
+            this.btnJuntar.Location = new System.Drawing.Point(7, 113);
+            this.btnJuntar.Name = "btnJuntar";
+            this.btnJuntar.Size = new System.Drawing.Size(283, 29);
+            this.btnJuntar.TabIndex = 2;
+            this.btnJuntar.Text = "Juntar";
+            this.btnJuntar.UseVisualStyleBackColor = true;
             // 
             // mcrWhere
             // 
@@ -153,6 +154,7 @@
             this.btnInterseccion.TabIndex = 4;
             this.btnInterseccion.Text = "Intersección";
             this.btnInterseccion.UseVisualStyleBackColor = true;
+            this.btnInterseccion.Click += new System.EventHandler(this.btnInterseccion_Click);
             // 
             // btnUnion
             // 
