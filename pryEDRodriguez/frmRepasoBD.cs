@@ -24,46 +24,35 @@ namespace pryEDRodriguez
         clsBaseDatos ObjBD = new clsBaseDatos();
         private void btnListar_Click(object sender, EventArgs e)
         {
-            String VarSQl = "SELECT * FROM LIBRO";
+            String VarSQL = "SELECT * FROM LIBRO";
             switch (cboConsulta.SelectedIndex)
             {
                 case 0:
-                    lblRepaso.Text = cboConsulta.Text + "; " + "Paises que no tienen libros";
-                    VarSQl = "SELECT * FROM PAIS WHERE" +
-                        "IDPAIS NOT IN " +
-                        "(SELECT IDPAIS FROM LIBRO)";
+                    lblRepaso.Text = cboConsulta.Text + ": " + "Paises que no tienen libros";
+                    VarSQL = "SELECT * FROM PAIS WHERE IDPAIS NOT IN (SELECT IDPAIS FROM LIBRO)";
                     break;
                 case 1:
-                    lblRepaso.Text = cboConsulta.Text + "; " + "Tablas que aparecen en ambas relaciones ";
-                    VarSQl = "SELECT NOMBRE FROM AUTOR " +
-                              "INTERSECT" +
-                              "SELECT NOMBRE FROM PAISES";
+                    lblRepaso.Text = cboConsulta.Text + ": " + "Libros con ID menores a 20 y con un precio menor a 600";
+                    VarSQL = "SELECT * FROM LIBRO WHERE IDLIBRO < 20 " +
+                        "INTERSECT " +
+                        "SELECT * FROM LIBRO WHERE PRECIO < 600";
+                    break;
+                case 2:
+                    VarSQL = "SELECT * FROM LIBRO WHERE IDIDIOMA = 4 " +
+                        "UNION " +
+                        "SELECT * FROM LIBRO WHERE PRECIO < 600";
                     break;
                 case 3:
-                    lblRepaso.Text = cboConsulta.Text + "; " + "";
-                    VarSQl= "SELECT * FROM Libro, Idioma " +
-                    "WHERE Libro.IdIdioma = Idioma.IdIdioma";
-
+                    VarSQL = "SELECT Titulo, Nombre FROM libro, Pais  Where Libro.idlibro = Pais.IdPais ";
                     break;
-                 case 4:
-                    lblRepaso.Text = cboConsulta.Text + "; " + "";
-                    VarSQl = "SELECT TITULO FROM LIBRO ORDER BY 1 DESC"; ;
+                case 4:
+                    VarSQL = "SELECT TITULO FROM LIBRO ORDER BY 1 DESC";
                     break;
                 case 5:
-
-                    break;
-                case 6:
-
-                    break;
-                case 7:
-                    break;
-                case 8:
-                    break;
-                case 9:
-                    break;
-                case 10:
+                    VarSQL = "SELECT IDLIBRO,TITULO FROM LIBRO ORDER BY 1 DESC";
                     break;
 
+                    ObjBD.Listar(dgvOperaciones, VarSQL);
 
             }
 
@@ -72,6 +61,11 @@ namespace pryEDRodriguez
         private void frmRepasoBD_Load(object sender, EventArgs e)
         {
             cboConsulta.SelectedIndex = 0;
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

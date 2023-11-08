@@ -50,6 +50,7 @@
             this.rbDescendente = new System.Windows.Forms.RadioButton();
             this.rbAscendente = new System.Windows.Forms.RadioButton();
             this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.mcrListado.SuspendLayout();
             this.mcrNuevo.SuspendLayout();
@@ -305,11 +306,22 @@
             this.pbImagen.TabIndex = 2;
             this.pbImagen.TabStop = false;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(968, 658);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(114, 42);
+            this.btnVolver.TabIndex = 18;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmListaDoble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 661);
+            this.ClientSize = new System.Drawing.Size(1095, 707);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.mcrListaDoble);
             this.Controls.Add(this.mcrListado);
@@ -356,5 +368,6 @@
         private System.Windows.Forms.RadioButton rbDescendente;
         private System.Windows.Forms.RadioButton rbAscendente;
         private System.Windows.Forms.PictureBox pbImagen;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

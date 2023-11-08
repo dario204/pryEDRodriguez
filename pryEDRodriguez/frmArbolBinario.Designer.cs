@@ -51,6 +51,7 @@
             this.rbPost = new System.Windows.Forms.RadioButton();
             this.rbPre = new System.Windows.Forms.RadioButton();
             this.rbIn = new System.Windows.Forms.RadioButton();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.mcrElemento.SuspendLayout();
             this.mcrEliminar.SuspendLayout();
             this.mcrListado.SuspendLayout();
@@ -60,7 +61,7 @@
             // tvArchivos
             // 
             this.tvArchivos.Location = new System.Drawing.Point(17, 16);
-            this.tvArchivos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tvArchivos.Margin = new System.Windows.Forms.Padding(4);
             this.tvArchivos.Name = "tvArchivos";
             this.tvArchivos.Size = new System.Drawing.Size(271, 240);
             this.tvArchivos.TabIndex = 0;
@@ -75,9 +76,9 @@
             this.mcrElemento.Controls.Add(this.lblNombre);
             this.mcrElemento.Controls.Add(this.lblCodigo);
             this.mcrElemento.Location = new System.Drawing.Point(315, 16);
-            this.mcrElemento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mcrElemento.Margin = new System.Windows.Forms.Padding(4);
             this.mcrElemento.Name = "mcrElemento";
-            this.mcrElemento.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mcrElemento.Padding = new System.Windows.Forms.Padding(4);
             this.mcrElemento.Size = new System.Drawing.Size(277, 241);
             this.mcrElemento.TabIndex = 1;
             this.mcrElemento.TabStop = false;
@@ -86,7 +87,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(149, 39);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(119, 22);
             this.txtCodigo.TabIndex = 0;
@@ -94,7 +95,7 @@
             // txtTramite
             // 
             this.txtTramite.Location = new System.Drawing.Point(108, 148);
-            this.txtTramite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTramite.Margin = new System.Windows.Forms.Padding(4);
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(160, 22);
             this.txtTramite.TabIndex = 2;
@@ -103,7 +104,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(108, 94);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(160, 22);
             this.txtNombre.TabIndex = 1;
@@ -124,7 +125,7 @@
             this.btnAgregar.Enabled = false;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Location = new System.Drawing.Point(9, 190);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(260, 52);
             this.btnAgregar.TabIndex = 3;
@@ -160,9 +161,9 @@
             this.mcrEliminar.Controls.Add(this.btnEliminar);
             this.mcrEliminar.Controls.Add(this.cboEliminar);
             this.mcrEliminar.Location = new System.Drawing.Point(627, 16);
-            this.mcrEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mcrEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.mcrEliminar.Name = "mcrEliminar";
-            this.mcrEliminar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mcrEliminar.Padding = new System.Windows.Forms.Padding(4);
             this.mcrEliminar.Size = new System.Drawing.Size(267, 149);
             this.mcrEliminar.TabIndex = 2;
             this.mcrEliminar.TabStop = false;
@@ -183,7 +184,7 @@
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(9, 94);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(249, 48);
             this.btnEliminar.TabIndex = 1;
@@ -196,7 +197,7 @@
             this.cboEliminar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEliminar.FormattingEnabled = true;
             this.cboEliminar.Location = new System.Drawing.Point(119, 37);
-            this.cboEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.cboEliminar.Name = "cboEliminar";
             this.cboEliminar.Size = new System.Drawing.Size(147, 24);
             this.cboEliminar.TabIndex = 0;
@@ -206,7 +207,7 @@
             // 
             this.btnEquilibrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEquilibrar.Location = new System.Drawing.Point(627, 206);
-            this.btnEquilibrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEquilibrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEquilibrar.Name = "btnEquilibrar";
             this.btnEquilibrar.Size = new System.Drawing.Size(267, 52);
             this.btnEquilibrar.TabIndex = 3;
@@ -222,9 +223,9 @@
             this.mcrListado.Controls.Add(this.rbPre);
             this.mcrListado.Controls.Add(this.rbIn);
             this.mcrListado.Location = new System.Drawing.Point(17, 278);
-            this.mcrListado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mcrListado.Margin = new System.Windows.Forms.Padding(4);
             this.mcrListado.Name = "mcrListado";
-            this.mcrListado.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mcrListado.Padding = new System.Windows.Forms.Padding(4);
             this.mcrListado.Size = new System.Drawing.Size(876, 222);
             this.mcrListado.TabIndex = 4;
             this.mcrListado.TabStop = false;
@@ -234,7 +235,7 @@
             // 
             this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Location = new System.Drawing.Point(40, 162);
-            this.btnExportar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(172, 52);
             this.btnExportar.TabIndex = 5;
@@ -250,7 +251,7 @@
             this.Nombre,
             this.Tramite});
             this.dgvLista.Location = new System.Drawing.Point(307, 34);
-            this.dgvLista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLista.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.RowHeadersWidth = 51;
             this.dgvLista.Size = new System.Drawing.Size(561, 180);
@@ -282,7 +283,7 @@
             this.rbPost.AutoSize = true;
             this.rbPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPost.Location = new System.Drawing.Point(61, 122);
-            this.rbPost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbPost.Margin = new System.Windows.Forms.Padding(4);
             this.rbPost.Name = "rbPost";
             this.rbPost.Size = new System.Drawing.Size(116, 24);
             this.rbPost.TabIndex = 2;
@@ -296,7 +297,7 @@
             this.rbPre.AutoSize = true;
             this.rbPre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPre.Location = new System.Drawing.Point(61, 78);
-            this.rbPre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbPre.Margin = new System.Windows.Forms.Padding(4);
             this.rbPre.Name = "rbPre";
             this.rbPre.Size = new System.Drawing.Size(108, 24);
             this.rbPre.TabIndex = 1;
@@ -310,7 +311,7 @@
             this.rbIn.AutoSize = true;
             this.rbIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbIn.Location = new System.Drawing.Point(61, 34);
-            this.rbIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbIn.Margin = new System.Windows.Forms.Padding(4);
             this.rbIn.Name = "rbIn";
             this.rbIn.Size = new System.Drawing.Size(92, 24);
             this.rbIn.TabIndex = 0;
@@ -319,17 +320,27 @@
             this.rbIn.UseVisualStyleBackColor = true;
             this.rbIn.CheckedChanged += new System.EventHandler(this.rbIn_CheckedChanged);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(780, 514);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(114, 42);
+            this.btnVolver.TabIndex = 14;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            // 
             // frmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 520);
+            this.ClientSize = new System.Drawing.Size(905, 567);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.mcrListado);
             this.Controls.Add(this.btnEquilibrar);
             this.Controls.Add(this.mcrEliminar);
             this.Controls.Add(this.mcrElemento);
             this.Controls.Add(this.tvArchivos);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmArbolBinario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructuras Ramificadas - Arbol Binario";
@@ -370,5 +381,6 @@
         private System.Windows.Forms.RadioButton rbPre;
         private System.Windows.Forms.RadioButton rbIn;
         private System.Windows.Forms.Button btnExportar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

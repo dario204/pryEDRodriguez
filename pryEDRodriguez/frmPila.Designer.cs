@@ -51,6 +51,7 @@
             this.mcrEliminado = new System.Windows.Forms.GroupBox();
             this.mcrNuevo = new System.Windows.Forms.GroupBox();
             this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPila)).BeginInit();
             this.mcrListado.SuspendLayout();
             this.mcrEliminado.SuspendLayout();
@@ -312,11 +313,22 @@
             this.pbImagen.TabStop = false;
             this.pbImagen.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(938, 617);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(114, 42);
+            this.btnVolver.TabIndex = 14;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmPila
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 618);
+            this.ClientSize = new System.Drawing.Size(1062, 670);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.mcrListado);
             this.Controls.Add(this.mcrEliminado);
@@ -362,5 +374,6 @@
         private System.Windows.Forms.GroupBox mcrEliminado;
         private System.Windows.Forms.GroupBox mcrNuevo;
         private System.Windows.Forms.PictureBox pbImagen;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

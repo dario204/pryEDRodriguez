@@ -47,6 +47,7 @@
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstLista = new System.Windows.Forms.ListBox();
             this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.mcrEliminado.SuspendLayout();
             this.mcrNuevo.SuspendLayout();
             this.mcrListado.SuspendLayout();
@@ -264,11 +265,22 @@
             this.pbImagen.TabIndex = 12;
             this.pbImagen.TabStop = false;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(930, 636);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(114, 42);
+            this.btnVolver.TabIndex = 13;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmListaSimple
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 625);
+            this.ClientSize = new System.Drawing.Size(1077, 690);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.mcrEliminado);
             this.Controls.Add(this.mcrNuevo);
@@ -309,5 +321,6 @@
         private System.Windows.Forms.ListBox lstLista;
         private System.Windows.Forms.ComboBox cboEliminar;
         private System.Windows.Forms.PictureBox pbImagen;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

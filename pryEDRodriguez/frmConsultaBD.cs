@@ -27,5 +27,10 @@ namespace pryEDRodriguez
             clsBaseDatos objBaseDatos = new clsBaseDatos();
             objBaseDatos.Listar(dgvConsulta, txtConsulta.Text);
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

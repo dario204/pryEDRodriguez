@@ -74,5 +74,11 @@ namespace pryEDRodriguez
             frmConsultaBD Consulta = new frmConsultaBD();
             Consulta.ShowDialog();
         }
+
+        private void repasoDeOperacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRepasoBD Repaso = new frmRepasoBD();
+            Repaso.ShowDialog();
+        }
     }
 }

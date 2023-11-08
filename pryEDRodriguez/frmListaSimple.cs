@@ -104,5 +104,10 @@ namespace pryEDRodriguez
                 e.Handled = true;
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

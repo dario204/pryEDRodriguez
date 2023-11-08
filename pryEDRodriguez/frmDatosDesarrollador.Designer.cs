@@ -34,6 +34,7 @@
             this.lblDocumento = new System.Windows.Forms.Label();
             this.lblDario = new System.Windows.Forms.Label();
             this.lblEstructura = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDni
@@ -99,11 +100,22 @@
             this.lblEstructura.TabIndex = 8;
             this.lblEstructura.Text = "Estructura de Datos";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(288, 497);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(114, 42);
+            this.btnVolver.TabIndex = 14;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmDatosDesarrollador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 503);
+            this.ClientSize = new System.Drawing.Size(414, 551);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblEstructura);
             this.Controls.Add(this.lblDario);
             this.Controls.Add(this.lblDocumento);
@@ -126,5 +138,6 @@
         private System.Windows.Forms.Label lblDocumento;
         private System.Windows.Forms.Label lblDario;
         private System.Windows.Forms.Label lblEstructura;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

@@ -51,6 +51,7 @@
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstCola = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.mcrNuevo.SuspendLayout();
             this.mcrEliminado.SuspendLayout();
             this.mcrListado.SuspendLayout();
@@ -311,11 +312,22 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(923, 676);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(114, 42);
+            this.btnVolver.TabIndex = 14;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmCola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 676);
+            this.ClientSize = new System.Drawing.Size(1053, 728);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.mcrListado);
             this.Controls.Add(this.mcrEliminado);
             this.Controls.Add(this.mcrNuevo);
@@ -361,5 +373,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tramite;
+        private System.Windows.Forms.Button btnVolver;
     }
 }
